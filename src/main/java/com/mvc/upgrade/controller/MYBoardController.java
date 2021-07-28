@@ -11,6 +11,8 @@ import com.mvc.upgrade.model.dto.MYBoardDto;
 @Controller
 public class MYBoardController {
 
+	// test!!!!
+	
 	@Autowired
 	private MYBoardBiz biz;
 	
@@ -26,8 +28,8 @@ public class MYBoardController {
 		
 		model.addAttribute("dto", biz.selectOne(myno));
 		
-		// return 에 들어가는건 .jsp라고 생각하면 된다!
-		// 경로는 이미 다 잡혀있어서...
+		// return �뿉 �뱾�뼱媛��뒗嫄� .jsp�씪怨� �깮媛곹븯硫� �맂�떎!
+		// 寃쎈줈�뒗 �씠誘� �떎 �옟���엳�뼱�꽌...
 		return "myboardselect";
 	}
 	@RequestMapping("/insertform.do")
@@ -35,12 +37,12 @@ public class MYBoardController {
 		return "myboardinsert";
 	}
 	@RequestMapping("/insertres.do")
-	// MYBoardDto dto 이거로 쓰면 이름, 제목, 내용 받아서 넣어줄꺼야 -> command object라고 한다.
+	// MYBoardDto dto �씠嫄곕줈 �벐硫� �씠由�, �젣紐�, �궡�슜 諛쏆븘�꽌 �꽔�뼱以꾧볼�빞 -> command object�씪怨� �븳�떎.
 	public String insertRes(MYBoardDto dto) {
 		
 		if (biz.insert(dto) > 0) {
-			// 직접 list.do로 보낸다.
-			// redirect: 를 안써주면 view에서 찾게 된다.
+			// 吏곸젒 list.do濡� 蹂대궦�떎.
+			// redirect: 瑜� �븞�뜥二쇰㈃ view�뿉�꽌 李얘쾶 �맂�떎.
 			return "redirect:list.do";
 		}
 		return "redirect:insertform.do";
