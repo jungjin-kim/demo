@@ -11,7 +11,6 @@ import com.mvc.upgrade.model.dto.MYBoardDto;
 @Controller
 public class MYBoardController {
 
-	// test!!!!
 	
 	@Autowired
 	private MYBoardBiz biz;
