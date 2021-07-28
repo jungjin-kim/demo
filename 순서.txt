@@ -1,0 +1,49 @@
+SpringMVC03
+01. pom.xml의 dependency 추가하기!
+	ojdbc6, mybatis, mybatis-spring, commons-dbcp, spring-orm
+	
+** src-main-webapp-WEB-INF - spring-appServlet에 root-context 를
+	spring-appServlet로 넣고, applicationContext.xml로 이름 바꾸기
+	
+02. web.xml (src-main-webapp-WEB-INF-web.xml)
+	servlet mapping에서 url-pattern *.do로 바꾸기
+	web.xml에서 
+	<param-value>/WEB-INF/spring/appServlet/applicationContext.xml</param-value>
+	경로 바꾸기
+	filter랑 filter mapping 넣어주기
+	맨 위에 java 대문자로 바꾸기!
+	webapp에 index.jsp 만들어서 <a href="home.do"> 추가
+	HomeController.java에서 
+	@RequestMapping(value = "/home.do" 로 바꾸기
+
+03. /WEB-INF/spring/sqls/test.sql
+	에 table 만들기
+	
+04. dto, dao, biz, controller만들기
+
+05. mybatis 설정파일 저장하기
+	(윈도우 설정에 xml
+	add에 
+	mybatis 홈페지에서 
+	key : -//mybatis.org//DTD Mapper 3.0//EN
+	location : http://mybatis.org/dtd/mybatis-3-mapper.dtd
+	
+	key : -//mybatis.org//DTD Config 3.0//EN
+	location : http://mybatis.org/dtd/mybatis-3-config.dtd
+	해서 
+	
+	xml파일 만들기
+	-mapper 다음 첫번째꺼, 다음 두번째꺼에 두번째꺼 클릭해서 피니시
+	매퍼 네임스페이스 바꿔주기)
+	mybaits 폴더 만드는건데 폴더=패키지라 패키지 만들어
+	src/main/resources/mybatis/myboard-mapper.xml
+	
+06. src/main/resources/mybatis/db.properties 만들기	
+
+07. /WEB-INF/spring/sqls/config.xml 만들기
+	xml 파일 	config.xml 넥스트 첫번째꺼 넥스트 컨피그 선택 후 피니시
+	
+08. src/main/resources/webapp/WEB-INF/spring/appServlet/applicationContext.xml
+
+09. DaoImpl, BizImpl, view/****.jsp, controller 로 왔다갔다하면서 만들어나가기!
+		
